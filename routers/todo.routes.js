@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/taskID/:id', async (req, res) => {
-	await Todo.find({ _id: req.params.id })
+	await Todo.findOne({ _id: req.params.id })
 		.then((task) => {
 			res.status(200).send(task);
 		})
