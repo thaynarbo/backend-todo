@@ -57,16 +57,4 @@ router.delete('/delete/:id', async (req, res) => {
 		});
 });
 
-// router.put('/progress/:id', async (req, res) => {
-// 	const todo1 = await Todo.findById(req.params.id);
-// 	todo.create()
-// 		.then(() => {
-// 			res.status(200).send('Task is gonna be completed');
-// 			todo.status.fazer = !todo.status.fazer;
-// 			todo.status.fazendo = !todo.status.fazendo;
-// 			todo.save;
-// 		})
-// 		.catch((err) => console.error(err));
-// });
-
 module.exports = router;
