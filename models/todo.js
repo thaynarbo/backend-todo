@@ -7,7 +7,10 @@ const TodoSchema = new Schema({
 	status: { type: String, default: 'fazer' },
 	prioridade: { type: Number, default: 1 },
 	prazo: { type: String },
-	dataCriacao: { type: String, default: Date().toLocaleDateString('en-GB') },
+	dataCriacao: {
+		type: String,
+		default: new Date().toLocaleDateString('en-GB'),
+	},
 });
 
 const Todo = mongoose.model('Todo', TodoSchema);
