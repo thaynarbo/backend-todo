@@ -9,7 +9,7 @@ const TodoSchema = new Schema({
 	prazo: { type: String },
 	dataCriacao: {
 		type: String,
-		default: new Date().toLocaleDateString('en-GB'),
+		default: new Date().toLocaleDateString('pt-BR'),
 	},
 });
 
