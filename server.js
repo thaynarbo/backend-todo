@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
 }
-
+const errorController = require('./controllers/errorController');
 const express = require('express');
 const cors = require('cors');
 const {
@@ -16,6 +16,8 @@ const app = express();
 const port = 3000;
 app.use(express.json());
 app.use(cors());
+
+app.use(errorController);
 
 Conn(db_user, db_pass, db_data, db_url);
 const todoRouter = require('./routers/todo.routes');
