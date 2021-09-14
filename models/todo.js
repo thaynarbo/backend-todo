@@ -9,7 +9,7 @@ const TodoSchema = new Schema({
 	prazo: { type: String },
 	dataCriacao: {
 		type: Date,
-		default: new Date(),
+		default: Date.now,
 	},
 });
 
