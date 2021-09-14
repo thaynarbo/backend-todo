@@ -8,7 +8,7 @@ const TodoSchema = new Schema({
 	prioridade: { type: Number, default: 1 },
 	prazo: { type: String },
 	dataCriacao: {
-		type: Date.UTC,
+		type: Date,
 		default: new Date(),
 	},
 });
