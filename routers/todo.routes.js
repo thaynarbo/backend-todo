@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Todo = require('../models/todo');
+const teste = require('../modules/sort');
 
 router.get('/', async (req, res) => {
 	await Todo.find({})
@@ -21,6 +22,32 @@ router.get('/taskID/:id', async (req, res) => {
 		.catch((err) => {
 			res.status(400).send('there is something wrong with your task');
 			console.log(err);
+		});
+});
+
+router.get('/sortByPriority', async (req, res) => {
+	await Todo.find({})
+		.then((task) => {
+			task = teste.porPrioridade(task);
+			console.log(task);
+			res.status(200).send(task);
+		})
+		.catch((err) => {
+			res.status(400).send('there is something wrong with your task ');
+			console.error(err);
+		});
+});
+
+router.get('/sortByStatus', async (req, res) => {
+	await Todo.find({})
+		.then((task) => {
+			task = teste.ordenandoPrioridade(task);
+			console.log(task);
+			res.status(200).send(task);
+		})
+		.catch((err) => {
+			res.status(400).send('there is something wrong with your task ');
+			console.error(err);
 		});
 });
 
